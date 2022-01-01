@@ -16,15 +16,14 @@ export const login = async (req: Request, res: Response) => {
       "select id from users where username=? and password=?",
       [username, password]
     );
-    if (rows.length === 0) throw new Error("incorrect username or password");
+    if (rows.length === 0) {
+      return res.status(500).send({ error: "incorrect username or password" });
+    }
     return res.send({ userId: rows[0].id });
   } catch (error) {
     if (error instanceof yup.ValidationError) {
       return res.status(500).send({ error: error.message });
     } else {
-      if (error.message.includes("incorrect")) {
-        return res.status(500).send({ error: error.message });
-      }
       return res.status(500).send({ error: "unknown error" });
     }
   }

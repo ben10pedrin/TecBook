@@ -32,7 +32,6 @@ export const register = async (req: Request, res: Response) => {
       "select id from users where username=?",
       [username]
     );
-
     return res.send({ userId: rows[0].id });
   } catch (error) {
     if (error instanceof yup.ValidationError) {
