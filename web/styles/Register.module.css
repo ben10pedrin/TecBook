@@ -18,35 +18,35 @@
   font-size: 1.2em;
 }
 
-.form-container {
+.formContainer {
   display: flex;
   flex-direction: column;
   width: 300px;
   height: fit-content;
 }
 
-.form-container > * {
+.formContainer > * {
   margin-top: 10px;
   padding: 5px;
   font-size: 1em;
 }
 
-.form-container input:focus {
+.formContainer input:focus {
   outline-color: var(--primary);
 }
 
-.form-container button {
+.formContainer button {
   background-color: var(--primary);
   color: var(--onPrimary);
   border: none;
   border-radius: 2px;
 }
 
-.form-container button:hover {
+.formContainer button:hover {
   cursor: pointer;
 }
 
-.form-container button:active {
+.formContainer button:active {
   transform: scale(0.99);
 }
 
