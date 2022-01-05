@@ -22,7 +22,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.2",
-    "mysql2": "^2.3.3",
+    "mongoose": "^6.1.5",
     "yup": "^0.32.11"
   }
 }

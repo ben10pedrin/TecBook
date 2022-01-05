@@ -1,15 +1,15 @@
 import express from "express";
 import cors from "cors";
+import mongoose from "mongoose";
 import { register } from "../routes/register";
 import { login } from "../routes/login";
 import { createPost } from "../routes/createPost";
 import { getAllPosts } from "../routes/getAllPosts";
 import { getUser } from "../routes/getUser";
 import { getPostsFromUser } from "../routes/getPostsFromUser";
-import { connectDb } from "./database";
 
 const main = async () => {
-  await connectDb();
+  await mongoose.connect("mongodb://127.0.0.1:27017/test");
 
   const app = express();
   const PORT = process.env.PORT || 4000;
